@@ -3,16 +3,16 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "profiles_iitccacw1prodcdn_name": {
-            "value": iitccacw1prodcdn
+            "value": "iitccacw1prodcdn"
         },
         "profiles_iitccacw1testcdn_name": {
-            "value": iitccacw1testcdn
+            "value": "iitccacw1testcdn"
         },
         "storageAccounts_iitccacw1prod_name": {
-            "value": iitccacw1prod
+            "value": "iitccacw1prod"
         },
         "storageAccounts_iitccacw1test_name": {
-            "value": iitccacw1test
+            "value": "iitccacw1test"
         }
     }
 }
