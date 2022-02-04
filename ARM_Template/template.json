@@ -267,7 +267,7 @@
             "apiVersion": "2020-09-01",
             "name": "[concat(parameters('profiles_biitccacw1prodcdn_name'), '/biitccacw1prod/biitccacw1prod-z29-web-core-windows-net')]",
             "dependsOn": [
-                "[resourceId('Microsoft.Cdn/profiles/endpoints', parameters('profiles_biitccacw1prodcdn_name'), 'bciitccacw1prod')]",
+                "[resourceId('Microsoft.Cdn/profiles/endpoints', parameters('profiles_biitccacw1prodcdn_name'), 'biitccacw1prod')]",
                 "[resourceId('Microsoft.Cdn/profiles', parameters('profiles_biitccacw1prodcdn_name'))]"
             ],
             "properties": {
@@ -280,7 +280,7 @@
             "apiVersion": "2020-09-01",
             "name": "[concat(parameters('profiles_biitccacw1testcdn_name'), '/biitccacw1test/biitccacw1test-z29-web-core-windows-net')]",
             "dependsOn": [
-                "[resourceId('Microsoft.Cdn/profiles/endpoints', parameters('profiles_biitccacw1testcdn_name'), 'bciitccacw1test')]",
+                "[resourceId('Microsoft.Cdn/profiles/endpoints', parameters('profiles_biitccacw1testcdn_name'), 'biitccacw1test')]",
                 "[resourceId('Microsoft.Cdn/profiles', parameters('profiles_biitccacw1testcdn_name'))]"
             ],
             "properties": {
