@@ -2,17 +2,17 @@
     "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
-        "profiles_biitccacw1prodcdn_name": {
-            "value": "biitccacw1prodcdn"
+        "profiles_demoiitccacw1prodcdn_name": {
+            "value": "demoiitccacw1prodcdn"
         },
-        "profiles_biitccacw1testcdn_name": {
-            "value": "biitccacw1testcdn"
+        "profiles_demoiitccacw1testcdn_name": {
+            "value": "demoiitccacw1testcdn"
         },
-        "storageAccounts_biitccacw1prod_name": {
-            "value": "biitccacw1prod"
+        "storageAccounts_demoiitccacw1prod_name": {
+            "value": "demoiitccacw1prod"
         },
-        "storageAccounts_biitccacw1test_name": {
-            "value": "biitccacw1test"
+        "storageAccounts_demoiitccacw1test_name": {
+            "value": "demoiitccacw1test"
         }
     }
 }

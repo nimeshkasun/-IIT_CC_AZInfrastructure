@@ -2,20 +2,20 @@
     "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
-        "profiles_biitccacw1prodcdn_name": {
-            "defaultValue": "biitccacw1prodcdn",
+        "profiles_demoiitccacw1prodcdn_name": {
+            "defaultValue": "demoiitccacw1prodcdn",
             "type": "String"
         },
-        "profiles_biitccacw1testcdn_name": {
-            "defaultValue": "biitccacw1testcdn",
+        "profiles_demoiitccacw1testcdn_name": {
+            "defaultValue": "demoiitccacw1testcdn",
             "type": "String"
         },
-        "storageAccounts_biitccacw1prod_name": {
-            "defaultValue": "biitccacw1prod",
+        "storageAccounts_demoiitccacw1prod_name": {
+            "defaultValue": "demoiitccacw1prod",
             "type": "String"
         },
-        "storageAccounts_biitccacw1test_name": {
-            "defaultValue": "biitccacw1test",
+        "storageAccounts_demoiitccacw1test_name": {
+            "defaultValue": "demoiitccacw1test",
             "type": "String"
         }
     },
@@ -24,7 +24,7 @@
         {
             "type": "Microsoft.Cdn/profiles",
             "apiVersion": "2020-09-01",
-            "name": "[parameters('profiles_biitccacw1prodcdn_name')]",
+            "name": "[parameters('profiles_demoiitccacw1prodcdn_name')]",
             "location": "Global",
             "sku": {
                 "name": "Standard_Akamai"
@@ -35,7 +35,7 @@
         {
             "type": "Microsoft.Cdn/profiles",
             "apiVersion": "2020-09-01",
-            "name": "[parameters('profiles_biitccacw1testcdn_name')]",
+            "name": "[parameters('profiles_demoiitccacw1testcdn_name')]",
             "location": "Global",
             "sku": {
                 "name": "Standard_Akamai"
@@ -46,7 +46,7 @@
         {
             "type": "Microsoft.Storage/storageAccounts",
             "apiVersion": "2021-06-01",
-            "name": "[parameters('storageAccounts_biitccacw1prod_name')]",
+            "name": "[parameters('storageAccounts_demoiitccacw1prod_name')]",
             "location": "centralindia",
             "sku": {
                 "name": "Standard_LRS",
@@ -85,7 +85,7 @@
         {
             "type": "Microsoft.Storage/storageAccounts",
             "apiVersion": "2021-06-01",
-            "name": "[parameters('storageAccounts_biitccacw1test_name')]",
+            "name": "[parameters('storageAccounts_demoiitccacw1test_name')]",
             "location": "centralindia",
             "sku": {
                 "name": "Standard_LRS",
@@ -124,13 +124,13 @@
         {
             "type": "Microsoft.Cdn/profiles/endpoints",
             "apiVersion": "2020-09-01",
-            "name": "[concat(parameters('profiles_biitccacw1prodcdn_name'), '/biitccacw1prod')]",
+            "name": "[concat(parameters('profiles_demoiitccacw1prodcdn_name'), '/demoiitccacw1prod')]",
             "location": "Global",
             "dependsOn": [
-                "[resourceId('Microsoft.Cdn/profiles', parameters('profiles_biitccacw1prodcdn_name'))]"
+                "[resourceId('Microsoft.Cdn/profiles', parameters('profiles_demoiitccacw1prodcdn_name'))]"
             ],
             "properties": {
-                "originHostHeader": "biitccacw1prod.z29.web.core.windows.net",
+                "originHostHeader": "demoiitccacw1prod.z29.web.core.windows.net",
                 "contentTypesToCompress": [
                     "text/plain",
                     "text/html",
@@ -148,9 +148,9 @@
                 "optimizationType": "GeneralWebDelivery",
                 "origins": [
                     {
-                        "name": "biitccacw1prod-z29-web-core-windows-net",
+                        "name": "demoiitccacw1prod-z29-web-core-windows-net",
                         "properties": {
-                            "hostName": "biitccacw1prod.z29.web.core.windows.net",
+                            "hostName": "demoiitccacw1prod.z29.web.core.windows.net",
                             "enabled": true
                         }
                     }
@@ -162,13 +162,13 @@
         {
             "type": "Microsoft.Cdn/profiles/endpoints",
             "apiVersion": "2020-09-01",
-            "name": "[concat(parameters('profiles_biitccacw1testcdn_name'), '/biitccacw1test')]",
+            "name": "[concat(parameters('profiles_demoiitccacw1testcdn_name'), '/demoiitccacw1test')]",
             "location": "Global",
             "dependsOn": [
-                "[resourceId('Microsoft.Cdn/profiles', parameters('profiles_biitccacw1testcdn_name'))]"
+                "[resourceId('Microsoft.Cdn/profiles', parameters('profiles_demoiitccacw1testcdn_name'))]"
             ],
             "properties": {
-                "originHostHeader": "biitccacw1test.z29.web.core.windows.net",
+                "originHostHeader": "demoiitccacw1test.z29.web.core.windows.net",
                 "contentTypesToCompress": [
                     "text/plain",
                     "text/html",
@@ -185,9 +185,9 @@
                 "queryStringCachingBehavior": "IgnoreQueryString",
                 "origins": [
                     {
-                        "name": "biitccacw1test-z29-web-core-windows-net",
+                        "name": "demoiitccacw1test-z29-web-core-windows-net",
                         "properties": {
-                            "hostName": "biitccacw1test.z29.web.core.windows.net",
+                            "hostName": "demoiitccacw1test.z29.web.core.windows.net",
                             "httpPort": 80,
                             "httpsPort": 443,
                             "enabled": true
@@ -201,9 +201,9 @@
         {
             "type": "Microsoft.Storage/storageAccounts/blobServices",
             "apiVersion": "2021-06-01",
-            "name": "[concat(parameters('storageAccounts_biitccacw1prod_name'), '/default')]",
+            "name": "[concat(parameters('storageAccounts_demoiitccacw1prod_name'), '/default')]",
             "dependsOn": [
-                "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_biitccacw1prod_name'))]"
+                "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_demoiitccacw1prod_name'))]"
             ],
             "sku": {
                 "name": "Standard_LRS",
@@ -233,9 +233,9 @@
         {
             "type": "Microsoft.Storage/storageAccounts/blobServices",
             "apiVersion": "2021-06-01",
-            "name": "[concat(parameters('storageAccounts_biitccacw1test_name'), '/default')]",
+            "name": "[concat(parameters('storageAccounts_demoiitccacw1test_name'), '/default')]",
             "dependsOn": [
-                "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_biitccacw1test_name'))]"
+                "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_demoiitccacw1test_name'))]"
             ],
             "sku": {
                 "name": "Standard_LRS",
@@ -265,26 +265,26 @@
         {
             "type": "Microsoft.Cdn/profiles/endpoints/origins",
             "apiVersion": "2020-09-01",
-            "name": "[concat(parameters('profiles_biitccacw1prodcdn_name'), '/biitccacw1prod/biitccacw1prod-z29-web-core-windows-net')]",
+            "name": "[concat(parameters('profiles_demoiitccacw1prodcdn_name'), '/demoiitccacw1prod/demoiitccacw1prod-z29-web-core-windows-net')]",
             "dependsOn": [
-                "[resourceId('Microsoft.Cdn/profiles/endpoints', parameters('profiles_biitccacw1prodcdn_name'), 'biitccacw1prod')]",
-                "[resourceId('Microsoft.Cdn/profiles', parameters('profiles_biitccacw1prodcdn_name'))]"
+                "[resourceId('Microsoft.Cdn/profiles/endpoints', parameters('profiles_demoiitccacw1prodcdn_name'), 'demoiitccacw1prod')]",
+                "[resourceId('Microsoft.Cdn/profiles', parameters('profiles_demoiitccacw1prodcdn_name'))]"
             ],
             "properties": {
-                "hostName": "aiitccacw1prod.z29.web.core.windows.net",
+                "hostName": "demoiitccacw1prod.z29.web.core.windows.net",
                 "enabled": true
             }
         },
         {
             "type": "Microsoft.Cdn/profiles/endpoints/origins",
             "apiVersion": "2020-09-01",
-            "name": "[concat(parameters('profiles_biitccacw1testcdn_name'), '/biitccacw1test/biitccacw1test-z29-web-core-windows-net')]",
+            "name": "[concat(parameters('profiles_demoiitccacw1testcdn_name'), '/demoiitccacw1test/demoiitccacw1test-z29-web-core-windows-net')]",
             "dependsOn": [
-                "[resourceId('Microsoft.Cdn/profiles/endpoints', parameters('profiles_biitccacw1testcdn_name'), 'biitccacw1test')]",
-                "[resourceId('Microsoft.Cdn/profiles', parameters('profiles_biitccacw1testcdn_name'))]"
+                "[resourceId('Microsoft.Cdn/profiles/endpoints', parameters('profiles_demoiitccacw1testcdn_name'), 'demoiitccacw1test')]",
+                "[resourceId('Microsoft.Cdn/profiles', parameters('profiles_demoiitccacw1testcdn_name'))]"
             ],
             "properties": {
-                "hostName": "biitccacw1test.z29.web.core.windows.net",
+                "hostName": "demoiitccacw1test.z29.web.core.windows.net",
                 "httpPort": 80,
                 "httpsPort": 443,
                 "enabled": true
@@ -293,10 +293,10 @@
         {
             "type": "Microsoft.Storage/storageAccounts/blobServices/containers",
             "apiVersion": "2021-06-01",
-            "name": "[concat(parameters('storageAccounts_biitccacw1prod_name'), '/default/$web')]",
+            "name": "[concat(parameters('storageAccounts_demoiitccacw1prod_name'), '/default/$web')]",
             "dependsOn": [
-                "[resourceId('Microsoft.Storage/storageAccounts/blobServices', parameters('storageAccounts_biitccacw1prod_name'), 'default')]",
-                "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_biitccacw1prod_name'))]"
+                "[resourceId('Microsoft.Storage/storageAccounts/blobServices', parameters('storageAccounts_demoiitccacw1prod_name'), 'default')]",
+                "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_demoiitccacw1prod_name'))]"
             ],
             "properties": {
                 "immutableStorageWithVersioning": {
@@ -310,10 +310,10 @@
         {
             "type": "Microsoft.Storage/storageAccounts/blobServices/containers",
             "apiVersion": "2021-06-01",
-            "name": "[concat(parameters('storageAccounts_biitccacw1test_name'), '/default/$web')]",
+            "name": "[concat(parameters('storageAccounts_demoiitccacw1test_name'), '/default/$web')]",
             "dependsOn": [
-                "[resourceId('Microsoft.Storage/storageAccounts/blobServices', parameters('storageAccounts_biitccacw1test_name'), 'default')]",
-                "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_biitccacw1test_name'))]"
+                "[resourceId('Microsoft.Storage/storageAccounts/blobServices', parameters('storageAccounts_demoiitccacw1test_name'), 'default')]",
+                "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_demoiitccacw1test_name'))]"
             ],
             "properties": {
                 "immutableStorageWithVersioning": {
